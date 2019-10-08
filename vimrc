@@ -21,3 +21,6 @@ map <LEADER><LEADER> <Esc>/<--><CR>:nohlsearch<CR>c4l
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 call plug#end()
+" 设置默认tab是4个空格
+set ts=4
+set expandtab
