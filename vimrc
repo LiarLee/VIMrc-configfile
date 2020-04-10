@@ -24,3 +24,13 @@ call plug#end()
 " 设置默认tab是4个空格
 set ts=4
 set expandtab
+
+set hlsearch
+
+colorscheme ron
+
+set nocompatible
+
+filetype on
+
+set autoindent
