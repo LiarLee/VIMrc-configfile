@@ -20,6 +20,7 @@ map <LEADER><LEADER> <Esc>/<--><CR>:nohlsearch<CR>c4l
 "安装插件
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " 设置默认tab是4个空格
