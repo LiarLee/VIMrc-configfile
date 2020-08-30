@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/etc'
-let g:netrw_dirhist_2='/etc/sysctl.d'
-let g:netrw_dirhist_1='/etc/skel'
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/hayden/.config/polybar'
+let g:netrw_dirhist_9='/home/hayden/.config/polybar/fonts'
+let g:netrw_dirhist_8='/opt/skyworking/apache-skywalking-apm-bin/config'
+let g:netrw_dirhist_7='/home/hayden/.config/bspwm'
+let g:netrw_dirhist_6='/usr'
+let g:netrw_dirhist_5='/usr/share'
+let g:netrw_dirhist_4='/usr/share/applications'
+let g:netrw_dirhist_3='/home/hayden/.config/bspwm'
+let g:netrw_dirhist_2='/home/hayden/.config'
+let g:netrw_dirhist_1='/home/hayden/.config/obs-studio'
