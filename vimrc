@@ -30,11 +30,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-surround',{'branch': 'master'}
+" Plug 'tpope/vim-surround',{'branch': 'master'}
 call plug#end()
 
-" 设置默认tab是4个空格
-set tabstop=4
+" 设置默认tab是2个空格
+set tabstop=2
 set expandtab
 
 " Setting the hlsearch
@@ -42,32 +42,35 @@ set hlsearch
 
 set nocompatible
 filetype indent on 
-
 filetype on
 
 set smartindent
 
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamed
 
 set encoding=utf8
 set fileencodings=utf8,gbk,gb2312,gb18030
-
-" COC Configuration
-let g:coc_global_extionsions = ['coc-python', 'coc-vimlsp', 'coc-highlight', 'coc-yaml', 'coc-json', 'coc-pyright', 'coc-list', 'coc-docker']
 
 set hidden "切换的时候隐藏当前的界面
 set updatetime=100 " 刷新时间
 set shortmess+=c " 精简信息
 
+
+" For TAB function to select the prompt and apply it.
+"
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 
 " Configuration for gruvbox SECTION
-"
 " let g:gruvbox_(option) = '(value)'
 " colorscheme inkpot
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -82,5 +85,7 @@ let g:gruvbox_italicize_comments = '1'
 let g:gruvbox_improved_warnings = '1'
 let g:gruvbox_improved_strings = '1'
 
+" Coc Configurations
+let g:coc_global_extensions = [ 'coc-pairs', 'coc-sh', 'coc-python', 'coc-git', 'coc-vimlsp', 'coc-highlight', 'coc-yaml', 'coc-json', 'coc-pyright', 'coc-docker' ]
 
 
