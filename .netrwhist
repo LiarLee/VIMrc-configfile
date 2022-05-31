@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/root/.config/nvim'
+let g:netrw_dirhist_2='/root/.vim'
 let g:netrw_dirhist_1='/var/log/journal/02e256eda44049fe92027aa029fc9b8c'
 let g:netrw_dirhist_0='/var/log/journal'
 let g:netrw_dirhist_9='/var/log'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_7='/etc/xdg'
 let g:netrw_dirhist_6='/etc/xdg/dunst'
 let g:netrw_dirhist_5='/home/hayden/.local/share/gnome-settings-daemon'
 let g:netrw_dirhist_4='/home/hayden/.local/share'
-let g:netrw_dirhist_3='/home/hayden/Documents/helmchart/ecos-temp/templates/services'
-let g:netrw_dirhist_2='/home/hayden/Documents/helmchart'
