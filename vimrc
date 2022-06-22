@@ -88,4 +88,8 @@ let g:gruvbox_improved_strings = '1'
 " Coc Configurations
 let g:coc_global_extensions = [ 'coc-pairs', 'coc-sh', 'coc-python', 'coc-git', 'coc-vimlsp', 'coc-highlight', 'coc-yaml', 'coc-json', 'coc-pyright', 'coc-docker' ]
 
+# close the noisy beep
+set noeb
+set vb t_vb=
+
 
