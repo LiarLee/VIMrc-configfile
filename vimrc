@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
 " Plug 'tpope/vim-surround',{'branch': 'master'}
 call plug#end()
 
@@ -92,4 +93,6 @@ let g:coc_global_extensions = [ 'coc-pairs', 'coc-sh', 'coc-python', 'coc-git', 
 set noeb
 set vb t_vb=
 
+" NerdTree
+nnoremap <C-t> :NERDTreeToggle<CR>
 
