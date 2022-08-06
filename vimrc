@@ -35,7 +35,7 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 " 设置默认tab是2个空格
-set tabstop=2
+set tabstop=4
 set expandtab
 
 " Setting the hlsearch
@@ -59,17 +59,30 @@ set shortmess+=c " 精简信息
 
 " For TAB function to select the prompt and apply it.
 "
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"
+"function! s:check_back_space() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  \ coc#pum#visible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ?
+  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+let g:coc_snippet_next = '<tab>'
 
 " Configuration for gruvbox SECTION
 " let g:gruvbox_(option) = '(value)'
