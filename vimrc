@@ -32,11 +32,14 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 " Plug 'tpope/vim-surround',{'branch': 'master'}
+Plug 'andrewstuart/vim-kubernetes'
 call plug#end()
 
 " 设置默认tab是2个空格
-set tabstop=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
+set smartindent
 
 " Setting the hlsearch
 set hlsearch
@@ -44,8 +47,6 @@ set hlsearch
 set nocompatible
 filetype indent on 
 filetype on
-
-set smartindent
 
 set clipboard=unnamed
 
@@ -58,18 +59,6 @@ set shortmess+=c " 精简信息
 
 
 " For TAB function to select the prompt and apply it.
-"
-"inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? "\<C-n>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"
-"function! s:check_back_space() abort
-"  let col = col('.') - 1
-"  return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-"
 inoremap <silent><expr> <TAB>
   \ coc#pum#visible() ? coc#_select_confirm() :
   \ coc#expandableOrJumpable() ?
@@ -109,3 +98,8 @@ set vb t_vb=
 " NerdTree
 nnoremap <C-t> :NERDTreeToggle<CR>
 
+" VIM-Kebernetes Keybinding
+au FileType yaml nmap <leader>r :KubeApply<CR>
+au FileType yaml nmap <leader>e :KubeDelete<CR>
+au FileType yaml nmap <leader>dr :KubeApplyDir<CR>
+au FileType yaml nmap <leader>de :KubeDeleteDir<CR>
