@@ -39,14 +39,14 @@ call plug#end()
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set smartindent
+" set smartindent
 
 " Setting the hlsearch
 set hlsearch
 
 set nocompatible
-filetype indent on 
-filetype on
+" filetype indent on 
+" filetype on
 
 set clipboard=unnamed
 
