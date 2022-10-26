@@ -1,5 +1,5 @@
 "自动换行
-set wrap
+"set wrap
 
 "提示命令
 set showcmd
@@ -25,6 +25,9 @@ set scrolloff=5
 "我的placeholder
 map <LEADER><LEADER> <Esc>/<--><CR>:nohlsearch<CR>c4l
 
+" 关于空行的设置
+set noeol
+
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
@@ -36,17 +39,17 @@ Plug 'andrewstuart/vim-kubernetes'
 call plug#end()
 
 " 设置默认tab是2个空格
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
-" set smartindent
+"set smartindent
 
 " Setting the hlsearch
 set hlsearch
 
 set nocompatible
-" filetype indent on 
-" filetype on
+"filetype indent on 
+filetype on
 
 set clipboard=unnamed
 
@@ -55,7 +58,7 @@ set fileencodings=utf8,gbk,gb2312,gb18030
 
 set hidden "切换的时候隐藏当前的界面
 set updatetime=100 " 刷新时间
-set shortmess+=c " 精简信息
+" set shortmess+=c " 精简信息
 
 
 " For TAB function to select the prompt and apply it.
