@@ -1,28 +1,28 @@
-"自动换行
-"set wrap
+" 自动换行
+set wrap
 
-"提示命令
+" 提示命令
 set showcmd
 
-"显示菜单
+" 显示菜单
 set wildmenu
 
-"显示行号  
+" 显示行号  
 set nu
 
-"显示光标所在的行
+" 显示光标所在的行
 set cursorline
 
-"显示关联的行号
+" 显示关联的行号
 set relativenumber
 
-"显示语法高亮
+" 显示语法高亮
 syntax on
 
-"锁定前后的5行
+" 锁定前后的5行
 set scrolloff=5
 
-"我的placeholder
+" 我的placeholder
 map <LEADER><LEADER> <Esc>/<--><CR>:nohlsearch<CR>c4l
 
 " 关于空行的设置
@@ -34,15 +34,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
-" Plug 'tpope/vim-surround',{'branch': 'master'}
 Plug 'andrewstuart/vim-kubernetes'
+" Plug 'tpope/vim-surround',{'branch': 'master'}
 call plug#end()
 
 " 设置默认tab是2个空格
 set tabstop=4
 set shiftwidth=4
 set expandtab
-"set smartindent
+" set smartindent
 
 " Setting the hlsearch
 set hlsearch
@@ -58,7 +58,7 @@ set fileencodings=utf8,gbk,gb2312,gb18030
 
 set hidden "切换的时候隐藏当前的界面
 set updatetime=100 " 刷新时间
-" set shortmess+=c " 精简信息
+set shortmess+=c " 精简信息
 
 
 " For TAB function to select the prompt and apply it.
@@ -92,7 +92,7 @@ let g:gruvbox_improved_warnings = '1'
 let g:gruvbox_improved_strings = '1'
 
 " Coc Configurations
-let g:coc_global_extensions = [ 'coc-pairs', 'coc-sh', 'coc-python', 'coc-git', 'coc-vimlsp', 'coc-highlight', 'coc-yaml', 'coc-json', 'coc-pyright', 'coc-docker' ]
+let g:coc_global_extensions = [ 'coc-pairs', 'coc-sh', 'coc-python', 'coc-git', 'coc-vimlsp', 'coc-highlight', 'coc-yaml', 'coc-json', 'coc-pyright', 'coc-docker']
 
 " close the noisy beep
 set noeb
@@ -100,6 +100,12 @@ set vb t_vb=
 
 " NerdTree
 nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+autocmd VimEnter * NERDTree | wincmd p
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " VIM-Kebernetes Keybinding
 au FileType yaml nmap <leader>r :KubeApply<CR>
