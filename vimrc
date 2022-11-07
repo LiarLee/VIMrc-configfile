@@ -60,6 +60,9 @@ set hidden "切换的时候隐藏当前的界面
 set updatetime=100 " 刷新时间
 set shortmess+=c " 精简信息
 
+set mouse=a
+set pastetoggle=
+
 
 " For TAB function to select the prompt and apply it.
 inoremap <silent><expr> <TAB>
@@ -103,7 +106,7 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
