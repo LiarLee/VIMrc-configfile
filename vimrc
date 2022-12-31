@@ -12,6 +12,7 @@ set nu
 
 "显示光标所在的行
 set cursorline
+set cursorcolumn
 
 "显示关联的行号
 set relativenumber
