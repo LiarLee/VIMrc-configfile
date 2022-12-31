@@ -12,6 +12,7 @@ set nu
 
 " 显示光标所在的行
 set cursorline
+set cursorcolumn
 
 " 显示关联的行号
 set relativenumber
@@ -115,3 +116,9 @@ au FileType yaml nmap <leader>r :KubeApply<CR>
 au FileType yaml nmap <leader>e :KubeDelete<CR>
 au FileType yaml nmap <leader>dr :KubeApplyDir<CR>
 au FileType yaml nmap <leader>de :KubeDeleteDir<CR>
+
+" NerdTree
+nnoremap <leader>2 :set colorcolumn=2<CR>
+nnoremap <leader>4 :set colorcolumn=4<CR>
+nnoremap <leader>1 :set colorcolumn=<CR>
+
