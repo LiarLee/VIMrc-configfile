@@ -48,7 +48,7 @@ set expandtab
 " Setting the hlsearch
 set hlsearch
 
-set nocompatible
+"set nocompatible
 "filetype indent on 
 filetype on
 
@@ -62,8 +62,7 @@ set updatetime=100 " 刷新时间
 set shortmess+=c " 精简信息
 
 set mouse=a
-set pastetoggle=
-
+" set pastetoggle=""
 
 " For TAB function to select the prompt and apply it.
 inoremap <silent><expr> <TAB>
@@ -71,7 +70,7 @@ inoremap <silent><expr> <TAB>
   \ coc#expandableOrJumpable() ?
   \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
   \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
+  \ coc#refresh(fork)
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -111,14 +110,15 @@ nnoremap <C-f> :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-" VIM-Kebernetes Keybinding
-au FileType yaml nmap <leader>r :KubeApply<CR>
-au FileType yaml nmap <leader>e :KubeDelete<CR>
-au FileType yaml nmap <leader>dr :KubeApplyDir<CR>
-au FileType yaml nmap <leader>de :KubeDeleteDir<CR>
+" VIM-Kubernetes Keybinding
+au FileType yaml nmap <LEADER>r :KubeApply<CR>
+au FileType yaml nmap <LEADER>e :KubeDelete<CR>
+au FileType yaml nmap <LEADER>dr :KubeApplyDir<CR>
+au FileType yaml nmap <LEADER>de :KubeDeleteDir<CR>
 
-" NerdTree
-nnoremap <leader>2 :set colorcolumn=2<CR>
-nnoremap <leader>4 :set colorcolumn=4<CR>
-nnoremap <leader>1 :set colorcolumn=<CR>
+" Highlight Indent
+nnoremap <LEADER>1 :set colorcolumn=<CR>
+nnoremap <LEADER>2 :set colorcolumn=3<CR>
+nnoremap <LEADER>3 :set colorcolumn=5<CR>
+nnoremap <LEADER>4 :set colorcolumn=9<CR>
 
