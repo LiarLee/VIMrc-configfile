@@ -122,3 +122,6 @@ nnoremap <LEADER>2 :set colorcolumn=3<CR>
 nnoremap <LEADER>3 :set colorcolumn=5<CR>
 nnoremap <LEADER>4 :set colorcolumn=9<CR>
 
+# 插入 # 注释， 和 删除 # 注释
+vnoremap <LEADER>a :norm i# <CR>
+vnoremap <LEADER>x :norm x <CR>
