@@ -3,6 +3,7 @@
 2022-07-21 补充Nerdtree。  
 2022-10-13 添加vim-kubernetes plugin 和 keybinding.  
 2023-01-01 检查之前的配置， 移除无效的配置文件， 添加新的功能， 使用快捷键检查缩进。
+2023-03-01 添加了一个奇怪的动画 - LEADER+m。
 
 
 ## Installation guide

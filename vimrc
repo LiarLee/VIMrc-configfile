@@ -1,4 +1,4 @@
-" 自动换行
+" 自动换行 
 set wrap
 
 " 提示命令
@@ -29,15 +29,22 @@ map <LEADER><LEADER> <Esc>/<--><CR>:nohlsearch<CR>c4l
 " 关于空行的设置
 set noeol
 
+set autoread
+
+lua require('plugins')
+
 " Vim-Plug
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'andrewstuart/vim-kubernetes'
-" Plug 'tpope/vim-surround',{'branch': 'master'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+"Plug 'tpope/vim-surround',{'branch': 'master'}
 call plug#end()
+
+"use 'eandrju/celluar-automaton.nvim'
 
 " 设置默认tab是2个空格
 set tabstop=4
@@ -52,7 +59,9 @@ set hlsearch
 "filetype indent on 
 filetype on
 
-set clipboard=unnamed
+" set clipboard=unnamed
+set clipboard+=unnamedplus
+
 
 set encoding=utf8
 set fileencodings=utf8,gbk,gb2312,gb18030
@@ -122,6 +131,9 @@ nnoremap <LEADER>2 :set colorcolumn=3<CR>
 nnoremap <LEADER>3 :set colorcolumn=5<CR>
 nnoremap <LEADER>4 :set colorcolumn=9<CR>
 
-# 插入 # 注释， 和 删除 # 注释
 vnoremap <LEADER>a :norm i# <CR>
-vnoremap <LEADER>x :norm x <CR>
+vnoremap <LEADER>x :norm 2x <CR>
+
+nnoremap <LEADER>m :CellularAutomaton make_it_rain<CR>
+
+
